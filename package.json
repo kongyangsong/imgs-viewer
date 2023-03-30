@@ -1,0 +1,44 @@
+{
+  "name": "imgs-viewer",
+  "version": "0.0.1",
+  "description": "a lightweight and customizable image gallery component for React applications. It allows users to preview images in a sleek and responsive manner, with features such as auto-play, full-screen mode, and thumbnail navigation. The package also supports lazy loading and preloading of images for improved performance. With easy-to-use props and styling options, imgs-viewer is a great choice for developers looking to enhance their image viewing experience.",
+  "keywords": [
+    "images",
+    "photos",
+    "pictures",
+    "digitals",
+    "view",
+    "preview",
+    "enlarge",
+    "react",
+    "custom"
+  ],
+  "type": "module",
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^3.1.0",
+    "vite": "^4.2.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
+  },
+  "dependencies": {
+    "react-images-viewer": "^1.7.1",
+    "sass": "^1.60.0"
+  }
+}
