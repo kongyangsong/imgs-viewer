@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     lib: {
-      entry: resolve(__dirname, './src/App.jsx'),
+      entry: resolve(__dirname, './src/App.tsx'),
       formats: ['es', 'umd'],
       name: 'viewer',
       fileName: 'index',

@@ -1,10 +1,19 @@
 import React, { useState } from "react";
 import ImgsViewer from "react-images-viewer";
-import styles from "./App.module.scss";
+// import styles from "./App.module.scss";
 
-export default ({ imgs }) => {
-  const [visieble, setVisieble] = useState(false);
-  const [currImg, setCurrImg] = useState(0);
+interface IProps {
+  imgs: Image[];
+}
+
+interface Image {
+  src: string;
+}
+
+export default (props: IProps) => {
+  const { imgs } = props || {};
+  const [visieble, setVisieble] = useState<boolean>(false);
+  const [currImg, setCurrImg] = useState<number>(0);
 
   function visibleToggle() {
     setVisieble(!visieble);
@@ -18,19 +27,20 @@ export default ({ imgs }) => {
     setCurrImg(currImg + 1);
   }
 
-  function imgClick(index) {
+  function imgClick(index: number) {
     setCurrImg(index);
     visibleToggle();
   }
 
   return (
-    <div className={styles["img_wrap"]}>
+    <div className={"img_wrap"} style={{ display: "flex" }}>
       {Array.isArray(imgs) && (
         <>
           {imgs.map((item, index) => {
             return (
               <img
-                className={styles["img_wrap_item"]}
+                className={"img_wrap_item"}
+                style={{ width: 40, height: 40, marginRight: 20 }}
                 src={item?.src}
                 key={item?.src}
                 onClick={imgClick.bind(null, index)}
